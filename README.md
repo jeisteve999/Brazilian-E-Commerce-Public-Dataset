@@ -35,7 +35,7 @@ Statistical indicators: mean, median, std dev, skewness, kurtosis, etc.
 - **Review & Time Analysis**
 
 🔗 [Download EDA Workbook (Excel)](https://docs.google.com/spreadsheets/d/1zdd57BElI3ywP_7NE4FsI7KMUQkYum69/edit?usp=drive_web&ouid=100337135303274897053&rtpof=true)
-🔗 [Download SQL EDA Queries (.sql)](https://github.com/jeisteve999/Brazilian-E-Commerce-Public-Dataset/blob/main/Data/SQLProject3.sql)
+🔗 [Download SQL EDA Queries (.sql)](https://github.com/jeisteve999/Brazilian-E-Commerce-Public-Dataset/blob/main/New_3_proyect_complete.sql)
 🔗 [Open EDA Summary Notebook (.ipynb)](https://github.com/jeisteve999/Brazilian-E-Commerce-Public-Dataset/tree/main/Eda)
 
 ---
