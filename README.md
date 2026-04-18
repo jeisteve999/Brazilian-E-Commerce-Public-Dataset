@@ -39,6 +39,22 @@ Statistical indicators: mean, median, std dev, skewness, kurtosis, etc.
 🔗 [Open EDA Summary Notebook (.ipynb)](https://github.com/jeisteve999/Brazilian-E-Commerce-Public-Dataset/tree/main/Eda)
 
 ---
+#  Business insights and recommendations
+
+São Paulo represents the highest revenue and customer concentration → focus on targeted marketing campaigns, retention strategies, and personalized promotions to maximize ROI
+
+Promote bundled offers and installment options to increase average order value and improve conversion rates
+
+High cancellations in categories like Sports & Leisure indicate potential product or delivery issues → implement cross-selling strategies with high-performing categories such as Health & Beauty to reduce risk
+
+Delivery issues are a key driver of cancellations → optimize logistics performance and monitor delivery status to reduce failed orders and improve customer satisfaction
+
+Implement personalized marketing strategies based on region and seasonality to increase campaign effectiveness and customer engagement
+
+Expand seller presence in underperforming regions to improve product availability and market coverage
+
+Launch customer surveys and feedback systems to better understand cancellation reasons and improve product quality and fulfillment processes
+
 
 ### 3. 📈 Dashboards
 
@@ -132,16 +148,6 @@ A summary presentation in PDF format highlights the key insights, visuals, and f
 - **Health & Beauty** is the top-selling product category  
 - High skewness and kurtosis in sales and deliveries suggest outliers and regional differences  
 - Delivery time strongly impacts customer satisfaction and review scores  
-
----
-
-## ✅ Recommendations
-
-- Promote bundled offers and installments to increase average ticket  
-- Improve logistics in states with frequent delays  
-- Create personalized marketing by region and season  
-- Expand seller base in underperforming states  
-- Launch surveys and referral programs for loyalty  
 
 ---
 
