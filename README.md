@@ -31,7 +31,7 @@ Are there seasonal patterns, and where do cancellations and delays concentrate?
 
 Relational model built in Power BI / Power Pivot (orders as the central table, with a date table, geolocation and category-translation lookups).
 
-![Data model](assets/data_model.png)
+![Data model](https://github.com/jeisteve999/Brazilian-E-Commerce-Public-Dataset/blob/main/Dashboards/Relation%20between%20tables%20png.png)
 
 ## ⚙️ Methodology
 
