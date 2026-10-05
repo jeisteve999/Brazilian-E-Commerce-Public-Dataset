@@ -98,7 +98,7 @@ Each dashboard has slicers for **Year**, **Primary Payment Method** and **Order 
 ## 👤 Author
 
 **Jeisson Steve Rojas Velásquez** · Data Analyst
-[GitHub](https://github.com/jeisteve999) · [LinkedIn](https://www.linkedin.com/) <!-- add your LinkedIn URL -->
+[GitHub](https://github.com/jeisteve999) · [LinkedIn](https://www.linkedin.com/in/jeisson-rojas/) <!-- add your LinkedIn URL -->
 
 📅 Originally published June 2025 · Dashboards redesigned and updated 2026
 
