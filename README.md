@@ -79,9 +79,8 @@ Each dashboard has slicers for **Year**, **Primary Payment Method** and **Order 
 ## 🔗 Resources
 
 - [Raw dataset](https://drive.google.com/drive/folders/1Y0XzaKFUYXntQQCEAmsSzQxc6pc0EZeL?usp=sharing)
-- [Cleaned dataset](https://drive.google.com/drive/folders/1MaXtDnEB10NFDj8SUHG4cUMZGzQLP_Zm)
-- [EDA workbook](https://docs.google.com/spreadsheets/d/1zdd57BElI3ywP_7NE4FsI7KMUQkYum69/edit?usp=drive_web)
-- [Excel dashboards](https://docs.google.com/spreadsheets/d/1pp4FP3bfqE3WLdOSSFy7MtBXUZ7M1sin/edit?usp=drive_link)
+- [Cleaned dataset](https://docs.google.com/spreadsheets/d/1jlZhiWdjltJmolP3lEnK5mOj03G752re/edit?gid=315966932#gid=315966932)
+- [EDA workbook](https://docs.google.com/spreadsheets/d/1Txe95M0MdCOHbZ766x1FiSr332zTxEfG/edit?usp=sharing&ouid=114125432240073644165&rtpof=true&sd=true)
 - [Power BI file (.pbix)](https://drive.google.com/file/d/1tJVXK8xq4W8hgZK6YgLF37faOUnIojfn/view?usp=sharing)
 - [Full project report (PDF)](docs/Brazilian_Ecommerce_Report.pdf)
 
