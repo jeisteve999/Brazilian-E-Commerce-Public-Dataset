@@ -1,4 +1,15 @@
 # Brazilian E-Commerce Data Analysis (2016–2018)
+
+[![Sales](https://github.com/jeisteve999/Brazilian-E-Commerce-Public-Dataset/blob/main/Dashboards/Sales%20analysis.png)
+[![Customer](https://github.com/jeisteve999/Brazilian-E-Commerce-Public-Dataset/blob/main/Dashboards/customer%20analysis.png)
+[![Payment](https://github.com/jeisteve999/Brazilian-E-Commerce-Public-Dataset/blob/main/Dashboards/Payment%20Analysis.png)
+[![Product](https://github.com/jeisteve999/Brazilian-E-Commerce-Public-Dataset/blob/main/Dashboards/Product%20Analysis.png)
+[![Seller](https://github.com/jeisteve999/Brazilian-E-Commerce-Public-Dataset/blob/main/Dashboards/Seller%20analysis.png)
+[![Geographic](https://github.com/jeisteve999/Brazilian-E-Commerce-Public-Dataset/blob/main/Dashboards/Geographic%20Analytsis.png)
+[![Review](https://github.com/jeisteve999/Brazilian-E-Commerce-Public-Dataset/blob/main/Dashboards/Review%20Analysis.png)
+[![Temporal](https://github.com/jeisteve999/Brazilian-E-Commerce-Public-Dataset/blob/main/Dashboards/Temporal%20Analysis.png)
+
+
 End-to-end analysis of +100k orders from the Olist Brazilian E-Commerce dataset: data cleaning and modeling, SQL analysis, exploratory statistics, and 8 interactive Power BI dashboards (plus Excel versions) covering sales, customers, payments, products, sellers, logistics, reviews and seasonality.
 
 # 🛒 Business Questions
