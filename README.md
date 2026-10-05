@@ -1,161 +1,108 @@
 # Brazilian E-Commerce Data Analysis (2016–2018)
-Data from Brazilian e-commerce was cleaned, transformed, and analyzed using Excel, Power BI, and SQL. The process included data modeling, exploratory analysis, dashboard creation, and generating insights about sales, customers, payments, logistics, and reviews.
+End-to-end analysis of ~100k orders from the Olist Brazilian E-Commerce dataset: data cleaning and modeling, SQL analysis, exploratory statistics, and 8 interactive Power BI dashboards (plus Excel versions) covering sales, customers, payments, products, sellers, logistics, reviews and seasonality.
 
-# 🛒 Brazilian E-Commerce Data Analysis (2016–2018)
+# 🛒 Business Questions
 
-This project analyzes customer behavior, sales, logistics, and satisfaction using the [Brazilian E-Commerce Public Dataset by Olist](https://www.kaggle.com/datasets/olistbr/brazilian-ecommerce). It includes data preparation, statistical exploration, SQL analysis, and dashboard creation using Excel and Power BI.
-
----
-
-## 📂 Project Structure
-
-### 1. 🔧 Data Preparation (ETL)
-
-- Cleaned with **Power Query** in Excel and Power BI  
-- Standardized formats: dates, currencies, missing values  
-- Merged and related tables (snowflake schema)
-- Made throguh power pivot merged and calculated columns, also created pivot tables  
-- SQL version: created tables, keys, constraints and imported `.csv` files  
-
-🔗 [Download Raw Dataset (Excel)](https://drive.google.com/drive/folders/1z12NxdpNSXAm-YVgWKvV7UZDT_QRCu8x)  
-🔗 [Download Cleaned Dataset (Excel)](https://drive.google.com/drive/folders/1MaXtDnEB10NFDj8SUHG4cUMZGzQLP_Zm)  
+Which product categories and states drive revenue?
+How do customers pay (method, installments) and how much do they spend?
+How well do sellers and logistics perform (dispatch time, on-time rate, freight cost)?
+How much does delivery performance affect customer satisfaction?
+Are there seasonal patterns, and where do cancellations and delays concentrate?
 
 ---
 
-### 2. 📊 Exploratory Data Analysis (EDA)
+## 📂 Key findings
 
-Performed using **PivotTables** in Excel, **Power Pivot / DAX** in Power BI, and **SQL queries**.  
-Statistical indicators: mean, median, std dev, skewness, kurtosis, etc.
-
-- **Sales EDA**  
-- **Customer EDA**  
-- **Payment EDA**  
-- **Product & Seller EDA**  
-- **Geographic & Delivery EDA**  
-- **Review & Time Analysis**
-
-🔗 [Download EDA Workbook (Excel)](https://docs.google.com/spreadsheets/d/1zdd57BElI3ywP_7NE4FsI7KMUQkYum69/edit?usp=drive_web&ouid=100337135303274897053&rtpof=true)
-🔗 [Download SQL EDA Queries (.sql)](https://github.com/jeisteve999/Brazilian-E-Commerce-Public-Dataset/blob/main/New_3_proyect_complete.sql)
-🔗 [Open EDA Summary Notebook (.ipynb)](https://github.com/jeisteve999/Brazilian-E-Commerce-Public-Dataset/tree/main/Eda)
+| Area | Finding |
+|---|---|
+| **Revenue concentration** | São Paulo sellers generate **$10.24M of $13.59M** in total sales (~75%). Health & Beauty ($1.26M), Watches & Gifts ($1.21M) and Bed, Bath & Table ($1.04M) lead categories. |
+| **Customers** | São Paulo has 40.3k customers, followed by Rio de Janeiro (12.4k) and Minas Gerais (11.3k). Only **3.12% of customers are returning** → retention is the biggest untapped opportunity. |
+| **Payments** | Credit card dominates (74.98k payments, $12.54M), followed by boleto (19.78k, $2.87M). 48,268 payments use a single installment; credit card averages 3.55 installments. |
+| **Logistics** | Average delivery takes **12.56 days**, average freight is **$22.82/order**, and on-time rate is **94.16%**. São Paulo is fastest (8.8 days); northern states such as Roraima, Paraíba and Rondônia pay the highest freight ($46–49 per order). |
+| **Satisfaction** | Average review score is **4.1** with 77% positive reviews. On-time orders score **4.3** vs **2.3** for late orders (gap of 2.02). Scores fall from 4.4 (0–7 days) to 2.4 (29+ days). |
+| **Seasonality** | November is the peak month (seasonality index **1.49**, Black Friday effect). Late-delivery rate also peaks in Nov 2017 (12.4%) and Mar 2018 (19.0%). Mondays and Tuesdays are the busiest days. |
+| **Product risks** | Sports & Leisure has the most cancellations (47). Home Comfort and Flowers have freight above 44% of product price. |
 
 ---
-#  Business insights and recommendations
-
--São Paulo represents the highest revenue and customer concentration → focus on targeted marketing campaigns, retention strategies, and personalized promotions to maximize ROI
-
--Promote bundled offers and installment options to increase average order value and improve conversion rates
-
--High cancellations in categories like Sports & Leisure indicate potential product or delivery issues → implement cross-selling strategies with high-performing categories such as Health & Beauty to reduce risk
-
--Delivery issues are a key driver of cancellations → optimize logistics performance and monitor delivery status to reduce failed orders and improve customer satisfaction
-
--Implement personalized marketing strategies based on region and seasonality to increase campaign effectiveness and customer engagement
-
--Expand seller presence in underperforming regions to improve product availability and market coverage
-
--Launch customer surveys and feedback systems to better understand cancellation reasons and improve product quality and fulfillment processes
+**Insights → actions:** invest in logistics outside the Southeast, run retention/loyalty programs, bundle slow-moving categories with top sellers, prepare capacity ahead of November, and expand seller coverage in high-freight states.
 
 
-### 3. 📈 Dashboards
+### 2. 📊  Data model
 
-Eight dashboards were developed in both Excel and Power BI to summarize insights:
+Relational model built in Power BI / Power Pivot (orders as the central table, with a date table, geolocation and category-translation lookups).
 
-- Sales Dashboard  
-- Customer Dashboard  
-- Payment Dashboard  
-- Product Dashboard  
-- Seller Dashboard  
-- Geographic Dashboard  
-- Review Dashboard  
-- Time/Temporal Dashboard  
+![Data model](assets/data_model.png)
 
-🔗 [Excel Dashboards (File)](https://docs.google.com/spreadsheets/d/1pp4FP3bfqE3WLdOSSFy7MtBXUZ7M1sin/edit?usp=drive_link&ouid=100337135303274897053&rtpof=true&sd=true)  
+## ⚙️ Methodology
 
-## 🧭 Dashboard Previews
+**1. Data preparation (ETL)**
+- Power Query: fixed errors, handled nulls/blanks, removed unused columns, standardized dates, numbers and currency.
+- SQL Server: imported the CSVs, defined data types, primary/foreign keys and constraints.
 
-### 🔹 Excel Dashboards
+**2. SQL analysis** (`sql/brazilian_ecommerce_full.sql`)
+- Sales trends by category, revenue by customer state, order tracking by status and time.
+- Stored procedures for monthly sales and sales by payment type.
+- Triggers to flag canceled orders and track late deliveries.
 
-#### Sales Dashboard  
-![Sales Excel](https://github.com/jeisteve999/Brazilian-E-Commerce-Public-Dataset/blob/main/Data/Sales%20excel.png)
+**3. Exploratory data analysis**
+- Descriptive statistics (mean, median, mode, range, std. dev., variance, skewness, kurtosis, quartiles) for each analysis area, computed with PivotTables and Power Pivot.
 
-#### Customer Dashboard  
-![Customer Excel](https://github.com/jeisteve999/Brazilian-E-Commerce-Public-Dataset/blob/main/Data/Customer%20excel.png)
-
-#### Payment Dashboard  
-![Customer Excel](https://github.com/jeisteve999/Brazilian-E-Commerce-Public-Dataset/blob/main/Data/Payment%20excel.png)
-
-#### Product Dashboard  
-![Customer Excel](https://github.com/jeisteve999/Brazilian-E-Commerce-Public-Dataset/blob/main/Data/Product%20excel.png)
-
-#### Seller Dashboard  
-![Customer Excel](https://github.com/jeisteve999/Brazilian-E-Commerce-Public-Dataset/blob/main/Data/seller%20excel.png)
-
-#### Geographic Dashboard  
-![Customer Excel](https://github.com/jeisteve999/Brazilian-E-Commerce-Public-Dataset/blob/main/Data/Geographic%20excel.png)
-
-#### Review Dashboard  
-![Customer Excel](https://github.com/jeisteve999/Brazilian-E-Commerce-Public-Dataset/blob/main/Data/Review%20Excel.png)
-
-#### Temporal Dashboard  
-![Customer Excel](https://github.com/jeisteve999/Brazilian-E-Commerce-Public-Dataset/blob/main/Data/Temporal%20excel.png)
-
-
-
-🔗 [Power BI Dashboards (.pbix & Images)](https://drive.google.com/file/d/1lEeWXopCzmvJfPhQCsCKLmYx9AEEfMwJ/view)
-
-
-### 🔹 Power BI Dashboards
-
-#### Sales Dashboard  
-![Sales Power BI](https://github.com/jeisteve999/Brazilian-E-Commerce-Public-Dataset/blob/main/Data/Sales%20power%20bi.png)
-
-#### Customer Dashboard  
-![Customer Power BI](https://github.com/jeisteve999/Brazilian-E-Commerce-Public-Dataset/blob/main/Data/Customer%20power%20bi.png)
-
-#### Payment Dashboard  
-![Customer Power BI](https://github.com/jeisteve999/Brazilian-E-Commerce-Public-Dataset/blob/main/Data/Payment%20power%20bi.png)
-
-#### Product Dashboard 
-![Customer Power BI](https://github.com/jeisteve999/Brazilian-E-Commerce-Public-Dataset/blob/main/Data/Product%20power%20bi.png)
-
-#### Seller Dashboard
-![Customer Power BI](https://github.com/jeisteve999/Brazilian-E-Commerce-Public-Dataset/blob/main/Data/Seller%20power%20bi.png)
-
-#### Geographic Dashboard
-![Customer Power BI](https://github.com/jeisteve999/Brazilian-E-Commerce-Public-Dataset/blob/main/Data/Gepgraphic%20power%20bi.png)
-
-#### Review Dashboard
-![Customer Power BI](https://github.com/jeisteve999/Brazilian-E-Commerce-Public-Dataset/blob/main/Data/Review%20Power%20bi.png)
-
-#### Temporal Dashboard
-![Customer Power BI](https://github.com/jeisteve999/Brazilian-E-Commerce-Public-Dataset/blob/main/Data/Temporal%20Power%20bi.png)
-
-
-
-
-### 4. 🧾 Presentation Document
-
-A summary presentation in PDF format highlights the key insights, visuals, and final recommendations.
-
-🔗 [Download Final Project Presentation (PDF)](https://github.com/jeisteve999/Brazilian-E-Commerce-Public-Dataset/blob/main/Third%20project%20Brazilian%20E-Commerce%20Public%20Dataset%20pdf.pdf)
+**4. Dashboards**
+- Calculated columns and DAX measures for KPIs such as on-time rate, delivery days, freight %, seasonality index, new vs. returning customers, and review gap (on-time vs. late).
 
 ---
 
-## 📌 Key Insights
+## 📊 Dashboards
 
-- **São Paulo** leads in sales, customers, and on-time deliveries  
-- **Credit card** is the most used payment method (76,795 orders)  
-- **Health & Beauty** is the top-selling product category  
-- High skewness and kurtosis in sales and deliveries suggest outliers and regional differences  
-- Delivery time strongly impacts customer satisfaction and review scores  
+Each dashboard has slicers for **Year**, **Primary Payment Method** and **Order Status**.
+
+| | |
+|---|---|
+| **Sales** ![](assets/dashboards/01_sales.png) | **Customers** ![](assets/dashboards/02_customer.png) |
+| **Payments** ![](assets/dashboards/03_payment.png) | **Products** ![](assets/dashboards/04_product.png) |
+| **Sellers** ![](assets/dashboards/05_seller.png) | **Geographic** ![](assets/dashboards/06_geographic.png) |
+| **Reviews** ![](assets/dashboards/07_review.png) | **Temporal** ![](assets/dashboards/08_temporal.png) |
+
+The earlier Excel versions of the dashboards are in [`dashboards/excel/`](dashboards/excel/).
 
 ---
 
-## 📁 Dataset Source
+## ⚠️ Notes & limitations
 
-[Kaggle – Brazilian E-Commerce Public Dataset by Olist](https://www.kaggle.com/datasets/olistbr/brazilian-ecommerce)
+- **Sales vs. payments:** total sales ($13.59M) is the sum of item prices; total payments (~$16.0M) also include freight.
+- **Incomplete months:** the dataset ends in Aug–Oct 2018 and 2016 has very few orders, so the last point of the sales trend (drop to 0) is a data cutoff, not a real collapse. The temporal dashboard compares 2017 vs. 2018 only.
+- **Review scores** are 1–5 per order; state-level averages (e.g., the 3.61–4.19 range in the EDA) are averages of those scores.
+- Statistical indicators (skewness, kurtosis) were computed on **aggregated values** (by state or month), so they describe the distribution of those aggregates, not individual orders.
+- Small differences between Excel and Power BI figures can appear due to different filter-context handling.
 
 ---
+## 🔗 Resources
+
+- [Raw dataset](https://drive.google.com/drive/folders/1z12NxdpNSXAm-YVgWKvV7UZDT_QRCu8x)
+- [Cleaned dataset](https://drive.google.com/drive/folders/1MaXtDnEB10NFDj8SUHG4cUMZGzQLP_Zm)
+- [EDA workbook](https://docs.google.com/spreadsheets/d/1zdd57BElI3ywP_7NE4FsI7KMUQkYum69/edit?usp=drive_web)
+- [Excel dashboards](https://docs.google.com/spreadsheets/d/1pp4FP3bfqE3WLdOSSFy7MtBXUZ7M1sin/edit?usp=drive_link)
+- [Power BI file (.pbix)](https://drive.google.com/file/d/1lEeWXopCzmvJfPhQCsCKLmYx9AEEfMwJ/view)
+- [Full project report (PDF)](docs/Brazilian_Ecommerce_Report.pdf)
+
+---
+
+## 🧠 What I learned
+
+- Designing a relational model that keeps filters working across 10+ tables (bidirectional relationships and filter context were the hardest part).
+- Cleaning and loading data into SQL Server despite type mismatches and missing values.
+- Writing DAX measures and calculated columns for business KPIs.
+- Reconciling numbers across Excel, SQL and Power BI.
+
+---
+
+## 👤 Author
+
+**Jeisson Steve Rojas Velásquez** · Data Analyst
+[GitHub](https://github.com/jeisteve999) · [LinkedIn](https://www.linkedin.com/) <!-- add your LinkedIn URL -->
+
+📅 Originally published June 2025 · Dashboards redesigned and updated 2026
+
 
 👨‍💻 Author: Jeisson Steve Rojas Velásquez  
 📅 Date: June 2025
