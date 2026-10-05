@@ -78,7 +78,7 @@ Each dashboard has slicers for **Year**, **Primary Payment Method** and **Order 
 ---
 ## 🔗 Resources
 
-- [Raw dataset](https://drive.google.com/drive/folders/1z12NxdpNSXAm-YVgWKvV7UZDT_QRCu8x)
+- [Raw dataset](https://drive.google.com/drive/folders/1Y0XzaKFUYXntQQCEAmsSzQxc6pc0EZeL?usp=sharing)
 - [Cleaned dataset](https://drive.google.com/drive/folders/1MaXtDnEB10NFDj8SUHG4cUMZGzQLP_Zm)
 - [EDA workbook](https://docs.google.com/spreadsheets/d/1zdd57BElI3ywP_7NE4FsI7KMUQkYum69/edit?usp=drive_web)
 - [Excel dashboards](https://docs.google.com/spreadsheets/d/1pp4FP3bfqE3WLdOSSFy7MtBXUZ7M1sin/edit?usp=drive_link)
