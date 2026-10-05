@@ -1,5 +1,5 @@
 # Brazilian E-Commerce Data Analysis (2016–2018)
-End-to-end analysis of ~100k orders from the Olist Brazilian E-Commerce dataset: data cleaning and modeling, SQL analysis, exploratory statistics, and 8 interactive Power BI dashboards (plus Excel versions) covering sales, customers, payments, products, sellers, logistics, reviews and seasonality.
+End-to-end analysis of +100k orders from the Olist Brazilian E-Commerce dataset: data cleaning and modeling, SQL analysis, exploratory statistics, and 8 interactive Power BI dashboards (plus Excel versions) covering sales, customers, payments, products, sellers, logistics, reviews and seasonality.
 
 # 🛒 Business Questions
 
