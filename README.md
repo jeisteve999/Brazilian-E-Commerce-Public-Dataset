@@ -63,7 +63,7 @@ Each dashboard has slicers for **Year**, **Primary Payment Method** and **Order 
 | **Sellers** ![](assets/dashboards/05_seller.png) | **Geographic** ![](assets/dashboards/06_geographic.png) |
 | **Reviews** ![](assets/dashboards/07_review.png) | **Temporal** ![](assets/dashboards/08_temporal.png) |
 
-The earlier Excel versions of the dashboards are in [`dashboards/excel/`](dashboards/excel/).
+
 
 ---
 
